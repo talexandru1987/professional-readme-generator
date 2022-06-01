@@ -8,13 +8,61 @@ const utils = require("./utils");
 const questions = [
   {
     type: "input",
-    name: "fullName",
-    message: "Please enter is your full name:",
+    name: "projectTitle",
+    message: "Please enter the project title:",
   },
   {
     type: "input",
-    name: "email",
-    message: "Please enter is your email address:",
+    name: "projectDescription",
+    message: "Please enter a project description:",
+  },
+  {
+    type: "confirm",
+    name: "confirmInstall",
+    message: "Do you need installation details:",
+  },
+  {
+    when: "confirmInstall",
+    type: "input",
+    name: "installDetails",
+    message: "Please enter installation details:",
+  },
+  {
+    type: "input",
+    name: "usageDetails",
+    message: "Please enter the usage details:",
+  },
+  {
+    type: "input",
+    name: "licenseDetails",
+    message: "Please enter the license details:",
+  },
+  {
+    type: "input",
+    name: "contributingDetails",
+    message: "Please enter the contributing details:",
+  },
+  {
+    type: "confirm",
+    name: "confirmTest",
+    message: "Do you need test details:",
+  },
+  {
+    when: "confirmTest",
+    type: "input",
+    name: "testDetails",
+    message: "Please enter test details:",
+  },
+  {
+    type: "confirm",
+    name: "confirmQuestions",
+    message: "Do you need a questions section:",
+  },
+  {
+    when: "confirmQuestions",
+    type: "input",
+    name: "questionsDetails",
+    message: "Please enter the questions details:",
   },
 ];
 
