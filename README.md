@@ -1,4 +1,4 @@
-# refresh ![BSD](https://img.shields.io/badge/BSD-License-green)
+# generator ![BSD](https://img.shields.io/badge/BSD-License-green)
 
 ## Table of Contents
 
@@ -13,7 +13,7 @@
 
 ## Description
 
-something
+thisis a generator
 
 
 ## Installation
@@ -37,24 +37,28 @@ npm start
 
 BSD License
 
-mit something
+some license details
 
 
 ## Contributing
 
-some contribution
+some contirbution
+
 
 ## Tests
 
 Please follow the instructions below:
 
 ```
-npm run test
+
+test2
+test4
+test1
 ```
 
 
 ## Questions
 
-Please contact me on my email: dfwdw@ynm.com
+Please contact me on my email: alex@yahoo.com
 
-Visit my GitHub profile [here](https://github.com/alex)
+Visit my GitHub profile [here](https://github.com/alexandru)

@@ -140,9 +140,6 @@ const questions = [
     type: "input",
     name: "questionsDetails",
     message: "Please enter the questions details:",
-    when(answers) {
-      return answers.confirmQuestions;
-    },
   },
 ];
 
@@ -180,6 +177,8 @@ const init = async () => {
   let exitLoop = true;
   // get answers for first set of questions
   const answers = await inquirer.prompt(questions);
+  //create the test section
+  let testDetailsString = "";
 
   while (exitLoop) {
     let testAnswers = await inquirer.prompt(createQuestion("Do you need extra test details?"));
@@ -195,19 +194,11 @@ const init = async () => {
   if (answers.testDetails) {
     //push first test section answers to the array
     testDetails.push(answers.testDetails);
-    //create the test section
-    let testDetailsString = "";
-
+    //iterate through the array
     testDetails.map((testDetail) => {
-      testDetailsString = testDetailsString + testDetail;
+      testDetailsString = testDetailsString + testDetail + "\n";
     });
-    console.log("test");
-    console.log(testDetailsString);
   }
-
-  // display answers
-  //console.log(answers);
-  //console.log(testDetails);
 
   const readmeContent = `# ${answers.projectTitle} ![${
     answers.projectBadge
@@ -261,13 +252,18 @@ ${answers.licenseDetails}
 
 ${answers.contributingDetails}
 
-## Tests
+
+${
+  testDetails.length > 0
+    ? `## Tests
 
 Please follow the instructions below:
 
 \`\`\`
-npm run test
-\`\`\`
+${testDetailsString}
+\`\`\``
+    : ""
+}
 
 
 ${
