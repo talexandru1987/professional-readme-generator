@@ -8,71 +8,197 @@ const utils = require("./utils");
 const questions = [
   {
     type: "input",
-    name: "projectTitle",
-    message: "Please enter the project title:",
+    name: "username",
+    message: "Please enter the you're GitHub username:",
+    validate(answer) {
+      if (!answer) {
+        return "Please, fill your username!";
+      }
+      return true;
+    },
   },
   {
     type: "input",
+    name: "projectTitle",
+    message(answers) {
+      return `Hi ${answers.username}.Please enter you're project title:`;
+    },
+    validate(answer) {
+      if (!answer) {
+        return "Please, enter a project title!";
+      }
+      return true;
+    },
+  },
+  {
+    type: "input",
+    name: "email",
+    message: "Please enter your email address:",
+    validate(answer) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(answer)) {
+        return "You have to provide a valid email address!";
+      }
+      return true;
+    },
+  },
+  {
+    type: "list",
+    name: "projectBadge",
+    message(answers) {
+      return `Please choose a license badge for project ${answers.projectTitle}:`;
+    },
+    choices: ["GPLv3", "GPLv2", "Apache", "BSD", "MIT"],
+    validate(answer) {
+      if (!answer) {
+        return "Please, choose a license badge!";
+      }
+      return true;
+    },
+  },
+  {
+    type: "editor",
     name: "projectDescription",
-    message: "Please enter a project description:",
+    message(answers) {
+      return `Please enter a description for the project ${answers.projectTitle}!`;
+    },
+    validate(answer) {
+      if (!answer) {
+        return `The description of project "${answers.projectTitle}" cannot be blank!`;
+      }
+      return true;
+    },
   },
   {
     type: "confirm",
     name: "confirmInstall",
     message: "Do you need installation details:",
+    default: false,
   },
   {
-    when: "confirmInstall",
     type: "input",
     name: "installDetails",
     message: "Please enter installation details:",
+    when(answers) {
+      return answers.confirmInstall;
+    },
   },
   {
     type: "input",
     name: "usageDetails",
     message: "Please enter the usage details:",
+    validate(answer) {
+      if (!answer) {
+        return "Usage details cannot be blank!";
+      }
+      return true;
+    },
   },
   {
     type: "input",
     name: "licenseDetails",
     message: "Please enter the license details:",
+    validate(answer) {
+      if (!answer) {
+        return "License details cannot be blank!";
+      }
+      return true;
+    },
   },
   {
     type: "input",
     name: "contributingDetails",
     message: "Please enter the contributing details:",
+    validate(answer) {
+      if (!answer) {
+        return "Contributing details cannot be blank!";
+      }
+      return true;
+    },
   },
   {
     type: "confirm",
     name: "confirmTest",
     message: "Do you need test details:",
+    default: false,
   },
   {
-    when: "confirmTest",
     type: "input",
     name: "testDetails",
     message: "Please enter test details:",
+    when(answers) {
+      return answers.confirmTest;
+    },
   },
   {
     type: "confirm",
     name: "confirmQuestions",
     message: "Do you need a questions section:",
+    default: false,
   },
   {
-    when: "confirmQuestions",
     type: "input",
     name: "questionsDetails",
     message: "Please enter the questions details:",
+    when(answers) {
+      return answers.confirmQuestions;
+    },
   },
 ];
 
+//questions used in the loop
+const createQuestion = (question) => {
+  return [
+    {
+      type: "confirm",
+      name: "questionConfirm",
+      message: `${question}`,
+      default: false,
+    },
+    {
+      type: "input",
+      name: "answerValue",
+      message: "Please enter the details:",
+      validate(answer) {
+        if (!answer) {
+          return "Details cannot be blank!";
+        }
+        return true;
+      },
+      when(answers) {
+        return answers.questionConfirm;
+      },
+    },
+  ];
+};
+
 // 3. declare your init function to ask questions
 const init = async () => {
+  //array that will contain all the test details values
+  let testDetails = [];
+  //variable used to exit the while loop
+  let exitLoop = true;
   // get answers for first set of questions
   const answers = await inquirer.prompt(questions);
 
+  while (exitLoop) {
+    let testAnswers = await inquirer.prompt(createQuestion("Do you need extra test details?"));
+    //change the exit variable
+    exitLoop = testAnswers.questionConfirm;
+    //if not empty push answer to array
+    if (testAnswers.answerValue) {
+      testDetails.push(testAnswers.answerValue);
+    }
+  }
+
+  //if not blank push first test section answers to the array
+  if (answers.testDetails) {
+    testDetails.push(answers.testDetails);
+  }
+
   // display answers
   console.log(answers);
+  console.log(testDetails);
 
   const readmeContent = `# Project Title ![MIT](https://img.shields.io/badge/MIT-License-green)
 
