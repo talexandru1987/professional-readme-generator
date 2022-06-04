@@ -1,4 +1,4 @@
-# Project Title ![MIT](https://img.shields.io/badge/MIT-License-green)
+# refresh ![BSD](https://img.shields.io/badge/BSD-License-green)
 
 ## Table of Contents
 
@@ -10,9 +10,11 @@
 - [Tests](#tests)
 - [Questions](#questions)
 
+
 ## Description
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+something
+
 
 ## Installation
 
@@ -22,21 +24,25 @@ Please follow the instructions below:
 npm install
 ```
 
+
 ## Usage
 
 Please follow the instructions below:
 
 ```
-npm run start
+npm start
 ```
 
 ## License
 
-MIT License
+BSD License
+
+mit something
+
 
 ## Contributing
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+some contribution
 
 ## Tests
 
@@ -46,8 +52,9 @@ Please follow the instructions below:
 npm run test
 ```
 
+
 ## Questions
 
-Please contact me on my email: myemail@email.com
+Please contact me on my email: dfwdw@ynm.com
 
-Visit my GitHub profile [here](https://github.com/surajverma2587)
+Visit my GitHub profile [here](https://github.com/alex)
