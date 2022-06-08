@@ -28,7 +28,11 @@ Please follow the instructions below:
 
 ```
 [Tutorial](./src/video/video_tutorial.mp4)
+https://user-images.githubusercontent.com/31418446/172710320-94a2dd47-47e8-481e-9026-87c5cb7f8d59.mp4
 ```
+
+
+
 
 ## License
 
