@@ -95,7 +95,7 @@ const questions = [
     },
   },
   {
-    type: "input",
+    type: "editor",
     name: "licenseDetails",
     message: "Please enter the license details:",
     validate(answer) {
@@ -106,7 +106,7 @@ const questions = [
     },
   },
   {
-    type: "input",
+    type: "editor",
     name: "contributingDetails",
     message: "Please enter the contributing details:",
     validate(answer) {
@@ -269,6 +269,8 @@ ${testDetailsString}
 ${
   answers.installDetails
     ? `## Questions
+
+${answers.questionsDetails}
 
 Please contact me on my email: ${answers.email}
 
