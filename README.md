@@ -10,11 +10,9 @@
 
 - [Questions](#questions)
 
-
 ## Description
 
-The project is a command-line application that dynamically generates a professional README.md file from a user's input using the [Inquirer package](https://www.npmjs.com/package/inquirer). 
-
+The project is a command-line application that dynamically generates a professional README.md file from a user's input using the [Inquirer package](https://www.npmjs.com/package/inquirer).
 
 ## Installation
 
@@ -24,13 +22,12 @@ Please follow the instructions below:
 npm i inquirer
 ```
 
-
 ## Usage
 
 Please follow the instructions below:
 
 ```
-[Tutorial](./src/video/video%20tutorial.mp4)
+[Tutorial](./src/video/video_tutorial.mp4)
 ```
 
 ## License
@@ -57,8 +54,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-
-
 ## Contributing
 
 To contribute to the project please refer to the following contribution guidelines:
@@ -68,11 +63,6 @@ Clone the project to your own machine
 Commit changes to your own branch
 Push your work back up to your fork
 Submit a Pull request so that we can review your changes
-
-
-
-
-
 
 ## Questions
 
