@@ -24,12 +24,9 @@ npm i inquirer
 
 ## Usage
 
-Please follow the instructions below:
+Find the walkthrough video [here](https://user-images.githubusercontent.com/31418446/172710320-94a2dd47-47e8-481e-9026-87c5cb7f8d59.mp4):
 
-```
-[Tutorial](./src/video/video_tutorial.mp4)
-https://user-images.githubusercontent.com/31418446/172710320-94a2dd47-47e8-481e-9026-87c5cb7f8d59.mp4
-```
+
 
 
 
